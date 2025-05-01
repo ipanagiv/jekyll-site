@@ -2,6 +2,153 @@
 
 This document outlines the complete setup process for the Jekyll blog with Docker and Cloudflare Tunnel deployment.
 
+## All Commands Used
+
+### Initial Setup Commands
+```bash
+# Create directory structure
+mkdir -p _layouts _posts assets/css
+
+# Initialize git repository
+git init
+
+# Configure git identity
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+
+# Add remote repository
+git remote add origin https://github.com/ipanagiv/jekyll-site.git
+```
+
+### Docker Commands
+```bash
+# Build and start container
+sudo docker compose up -d
+
+# Stop container
+sudo docker compose down
+
+# Rebuild container
+sudo docker compose build --no-cache
+
+# Check running containers
+sudo docker ps
+
+# View container logs
+sudo docker logs desktop-jekyll-1
+
+# Remove existing container
+sudo docker stop jekyll-site-jekyll-1
+sudo docker rm jekyll-site-jekyll-1
+```
+
+### Git Commands
+```bash
+# Stage all files
+git add .
+
+# Initial commit
+git commit -m "Initial commit: Jekyll site setup with Docker and Cloudflare configuration"
+
+# Push to GitHub
+git push -u origin master
+
+# Add setup documentation
+git add SETUP.md
+git commit -m "Add detailed setup documentation"
+git push origin master
+```
+
+### File Management Commands
+```bash
+# Remove unnecessary files
+rm config.yml
+rm -rf 'test site'
+
+# Check directory contents
+ls -la
+```
+
+### Docker Container Management
+```bash
+# Check container status
+sudo docker ps -a | grep jekyll
+
+# Stop and remove containers
+sudo docker compose down
+
+# Rebuild and start containers
+sudo docker compose build --no-cache
+sudo docker compose up -d
+```
+
+### Jekyll Commands
+```bash
+# Build site
+bundle exec jekyll build
+
+# Build with trace for debugging
+bundle exec jekyll build --trace
+
+# Serve site locally
+bundle exec jekyll serve
+```
+
+### Cloudflare Tunnel Commands
+```bash
+# Login to Cloudflare
+cloudflared login
+
+# Create tunnel
+cloudflared tunnel create jekyll-blog
+
+# Configure DNS routing
+cloudflared tunnel route dns jekyll-blog blog.freshspot.club
+
+# Install service
+sudo cloudflared service install
+
+# Start service
+sudo systemctl start cloudflared
+sudo systemctl enable cloudflared
+
+# Check tunnel status
+cloudflared tunnel info jekyll-blog
+```
+
+### System Commands
+```bash
+# Update system
+sudo apt update
+sudo apt upgrade -y
+
+# Install Docker
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+
+# Add user to docker group
+sudo usermod -aG docker $USER
+
+# Install Docker Compose
+sudo apt install docker-compose-plugin
+
+# Install cloudflared
+curl -L --output cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm64.deb
+sudo dpkg -i cloudflared.deb
+```
+
+### Permission Commands
+```bash
+# Fix Docker permissions
+sudo usermod -aG docker $USER
+
+# Fix file permissions
+sudo chown -R $USER:$USER .
+
+# Check Docker socket permissions
+ls -l /var/run/docker.sock
+```
+
 ## Initial Setup
 
 ### 1. Jekyll Site Structure
@@ -99,40 +246,6 @@ sudo systemctl start docker
 ```bash
 # Install Docker Compose
 sudo apt install docker-compose-plugin
-```
-
-## Cloudflare Setup
-
-### 1. Install cloudflared
-```bash
-# Download and install cloudflared
-curl -L --output cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm64.deb
-sudo dpkg -i cloudflared.deb
-```
-
-### 2. Configure Tunnel
-```bash
-# Login to Cloudflare
-cloudflared login
-
-# Create tunnel
-cloudflared tunnel create jekyll-blog
-
-# Configure tunnel (example config - adjust as needed)
-cloudflared tunnel route dns jekyll-blog blog.freshspot.club
-```
-
-### 3. Create Tunnel Configuration
-Create `~/.cloudflared/config.yml` with appropriate settings (refer to private documentation for actual credentials)
-
-### 4. Start Tunnel Service
-```bash
-# Install service
-sudo cloudflared service install
-
-# Start service
-sudo systemctl start cloudflared
-sudo systemctl enable cloudflared
 ```
 
 ## Site Content Setup
