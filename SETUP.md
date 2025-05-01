@@ -2,6 +2,30 @@
 
 This document outlines the complete setup process for the Jekyll blog with Docker and Cloudflare Tunnel deployment.
 
+## Just Automation
+
+The project uses [Just](https://github.com/casey/just) for automation. Available commands:
+
+```bash
+# Build the site locally
+just build
+
+# Serve the site locally
+just serve
+
+# Build and run the Docker container
+just docker-up
+
+# Stop the Docker container
+just docker-down
+
+# Push changes to GitHub
+just push "commit message"
+
+# Pull latest changes from GitHub
+just pull
+```
+
 ## All Commands Used
 
 ### Initial Setup Commands
