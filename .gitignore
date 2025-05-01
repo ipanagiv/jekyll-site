@@ -1,0 +1,41 @@
+# Jekyll build output
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Environment files
+.env
+*.env
+.env.*
+
+# System Files
+.DS_Store
+._.DS_Store
+**/.DS_Store
+**/._.DS_Store
+
+# Docker
+docker-compose.override.yml
+
+# Cloudflare credentials and config
+.cloudflared/
+*.pem
+*.crt
+*.key
+tunnel.json
+cert.pem
+
+# Dependencies
+/vendor
+.bundle/
+vendor/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log 

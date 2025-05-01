@@ -1,0 +1,39 @@
+title: My Blog
+description: A static website built with Jekyll
+baseurl: ""
+url: "https://blog.freshspot.club"
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /:collection/:title/
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+# Exclude files from processing
+exclude:
+  - Dockerfile
+  - docker-compose.yml
+  - Gemfile
+  - Gemfile.lock
+  - justfile
+  - README.md
+  - .git
+  - .gitignore
+  - _site
+
+# Build settings
+destination: _site
+keep_files: ["_site"] 
