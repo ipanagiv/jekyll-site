@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="800" height="400" fill="#f8f9fa"/>
+    
+    <!-- Title -->
+    <text x="400" y="40" font-family="Arial" font-size="24" text-anchor="middle" fill="#333">Jekyll Blog Architecture</text>
+    
+    <!-- Raspberry Pi -->
+    <rect x="50" y="100" width="200" height="200" rx="10" fill="#fff" stroke="#333" stroke-width="2"/>
+    <text x="150" y="140" font-family="Arial" font-size="16" text-anchor="middle" fill="#333">Raspberry Pi</text>
+    <rect x="70" y="160" width="160" height="40" rx="5" fill="#e9ecef" stroke="#333" stroke-width="1"/>
+    <text x="150" y="185" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">Docker</text>
+    <rect x="70" y="210" width="160" height="40" rx="5" fill="#e9ecef" stroke="#333" stroke-width="1"/>
+    <text x="150" y="235" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">Jekyll</text>
+    
+    <!-- Cloudflare -->
+    <rect x="550" y="100" width="200" height="200" rx="10" fill="#fff" stroke="#333" stroke-width="2"/>
+    <text x="650" y="140" font-family="Arial" font-size="16" text-anchor="middle" fill="#333">Cloudflare</text>
+    <rect x="570" y="160" width="160" height="40" rx="5" fill="#e9ecef" stroke="#333" stroke-width="1"/>
+    <text x="650" y="185" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">Tunnel</text>
+    <rect x="570" y="210" width="160" height="40" rx="5" fill="#e9ecef" stroke="#333" stroke-width="1"/>
+    <text x="650" y="235" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">DNS</text>
+    
+    <!-- Arrows -->
+    <path d="M250 200 L550 200" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+    <path d="M550 200 L250 200" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+    
+    <!-- Arrowhead definition -->
+    <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+        </marker>
+    </defs>
+    
+    <!-- Labels -->
+    <text x="400" y="190" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">Secure Tunnel</text>
+    <text x="400" y="210" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">HTTPS Traffic</text>
+</svg> 

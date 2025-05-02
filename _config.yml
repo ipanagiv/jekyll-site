@@ -3,6 +3,11 @@ description: A static website built with Jekyll
 baseurl: ""
 url: "https://blog.freshspot.club"
 
+# Time and date settings
+timezone: Europe/Athens
+date_format: "%Y-%m-%d"
+future: false
+
 # Build settings
 markdown: kramdown
 plugins:

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="600" height="400" fill="#f8f9fa"/>
+    
+    <!-- Title -->
+    <text x="300" y="40" font-family="Arial" font-size="24" text-anchor="middle" fill="#333">Cloudflare Tunnel Setup</text>
+    
+    <!-- Local Server -->
+    <rect x="50" y="100" width="200" height="200" rx="10" fill="#fff" stroke="#333" stroke-width="2"/>
+    <text x="150" y="140" font-family="Arial" font-size="16" text-anchor="middle" fill="#333">Local Server</text>
+    <rect x="70" y="160" width="160" height="40" rx="5" fill="#e9ecef" stroke="#333" stroke-width="1"/>
+    <text x="150" y="185" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">Port 4000</text>
+    
+    <!-- Cloudflare -->
+    <rect x="350" y="100" width="200" height="200" rx="10" fill="#fff" stroke="#333" stroke-width="2"/>
+    <text x="450" y="140" font-family="Arial" font-size="16" text-anchor="middle" fill="#333">Cloudflare</text>
+    <rect x="370" y="160" width="160" height="40" rx="5" fill="#e9ecef" stroke="#333" stroke-width="1"/>
+    <text x="450" y="185" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">Tunnel</text>
+    <rect x="370" y="210" width="160" height="40" rx="5" fill="#e9ecef" stroke="#333" stroke-width="1"/>
+    <text x="450" y="235" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">DNS</text>
+    
+    <!-- Tunnel Connection -->
+    <path d="M250 200 L350 200" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+    <text x="300" y="190" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">Secure Tunnel</text>
+    
+    <!-- Internet -->
+    <rect x="250" y="300" width="100" height="40" rx="5" fill="#e9ecef" stroke="#333" stroke-width="1"/>
+    <text x="300" y="325" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">Internet</text>
+    
+    <!-- Arrowhead definition -->
+    <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+        </marker>
+    </defs>
+</svg> 
